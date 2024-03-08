@@ -1,5 +1,5 @@
 export const loggerMiddleware = ({getState}) => (next) => (action) => {
-  const {REACT_APP_ENV} = process.env;
+  const {REACT_APP_ENV} = import.meta.env;
 
   if (REACT_APP_ENV === 'development') {
 
