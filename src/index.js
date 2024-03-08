@@ -1,12 +1,23 @@
-import 'normalize.css/normalize.css';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
-import {App} from "./ui/App";
+// import React from 'react';
+// import ReactDOM from "react-dom/client";
+// import {Provider} from 'react-redux';
+// import {App} from "./ui/App";
+import { fetchBooks } from "./redux/actions/books";
 import {store} from "./redux/store";
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root'));
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(
+//   <React.StrictMode>
+//     <Provider store={store}>
+//       <App />
+//     </Provider>
+//   </React.StrictMode>
+// );
+
+store.dispatch(fetchBooks({query:'redux'}));
+
+
+// const unsubscribe = store.subscribe(() =>
+//   console.log('State after dispatch: ', store.getState())
+// )
